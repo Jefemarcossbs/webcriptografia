@@ -5,7 +5,8 @@ from .forms import Gerar_Chave
 
 # Create your views here.
 def index(request):
-    template_index = loader.get_template('index.html')
-    return HttpResponse(template_index.render())
+    form = Gerar_Chave()
+    print(request)
+    return render(request, 'index.html', {'form_generate_key': form})
 
 

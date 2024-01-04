@@ -10,13 +10,14 @@
 <body>
     <p>Bem vindo</p>
     
-    <p>Digite um nome para gerar uma chave criptografica:</p>
-    <form action="/your-name/" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="text" id="nome_gerar_chave" name="nomechave">
-        <input type="submit" value="Gerar e baixar">
+{% block content %}
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form_generate_key }}
+        <button type="submit" class="save btn btn-default">Gerar Chave</button>
     </form>
+{% endblock %}
+ 
+
     <p>Click em escolher arquivo para selecionar um arquivo para criptografar:</p>
     <form action="">
         <input type="file" id="file_to_cript" name="filename">
