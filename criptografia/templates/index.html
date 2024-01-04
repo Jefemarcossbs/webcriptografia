@@ -11,7 +11,9 @@
     <p>Bem vindo</p>
     
     <p>Digite um nome para gerar uma chave criptografica:</p>
-    <form action="">
+    <form action="/your-name/" method="post">
+        {% csrf_token %}
+        {{ form }}
         <input type="text" id="nome_gerar_chave" name="nomechave">
         <input type="submit" value="Gerar e baixar">
     </form>
