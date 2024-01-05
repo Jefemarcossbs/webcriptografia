@@ -11,9 +11,9 @@
     <p>Bem vindo</p>
     
 {% block content %}
-    <form method="POST" class="post-form">{% csrf_token %}
+    <form action="/newkey/" method="POST">{% csrf_token %}
         {{ form_generate_key }}
-        <button type="submit" class="save btn btn-default">Gerar Chave</button>
+        <input type="submit" value="Submit">
     </form>
 {% endblock %}
  
